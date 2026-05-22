@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b0f;
+  color: #f8f9fa;
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(226, 0, 116, 0.12), transparent 55%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+::selection {
+  background: rgba(226, 0, 116, 0.35);
+  color: #ffffff;
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-10;
+  }
+
+  .glass-panel {
+    @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl;
+  }
+
+  .headline {
+    @apply text-4xl md:text-6xl font-bold tracking-tight leading-tight;
+  }
+
+  .subheadline {
+    @apply text-lg md:text-xl text-zinc-400 leading-relaxed;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .muted-text {
+    @apply text-zinc-500;
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      to right,
+      #ffffff,
+      #e20074
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .story-card {
+    @apply glass-panel p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-glow;
+  }
+
+  .nav-link {
+    @apply text-zinc-400 hover:text-white transition-colors duration-200;
+  }
+
+  .primary-button {
+    @apply bg-primary hover:opacity-90 text-white px-6 py-3 rounded-2xl transition-all duration-300 shadow-glow;
+  }
+
+  .secondary-button {
+    @apply border border-white/10 hover:border-primary/50 text-white px-6 py-3 rounded-2xl transition-all duration-300;
+  }
+}
