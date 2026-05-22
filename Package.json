@@ -1,0 +1,31 @@
+{
+  "name": "built-anyway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A living digital memoir, innovation lab, and systems-thinking platform documenting growth, survival, analytics, creativity, leadership, rebuilding, and becoming.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest"
+  }
+}
