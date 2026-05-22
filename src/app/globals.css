@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   color-scheme: dark;
@@ -21,8 +19,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(circle at top, rgba(226, 0, 116, 0.12), transparent 55%);
+  background: radial-gradient(circle at top, rgba(226, 0, 116, 0.12), transparent 55%);
   pointer-events: none;
   z-index: -1;
 }
@@ -32,55 +29,120 @@ body::before {
   color: #ffffff;
 }
 
-@layer components {
+.section-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
   .section-container {
-    @apply max-w-7xl mx-auto px-6 md:px-10;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
+}
 
-  .glass-panel {
-    @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl;
-  }
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+}
 
+.headline {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
   .headline {
-    @apply text-4xl md:text-6xl font-bold tracking-tight leading-tight;
+    font-size: 3.75rem;
   }
+}
 
+.subheadline {
+  font-size: 1.125rem;
+  color: #a1a1aa;
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
   .subheadline {
-    @apply text-lg md:text-xl text-zinc-400 leading-relaxed;
+    font-size: 1.25rem;
   }
+}
 
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
   .section-title {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    font-size: 2.25rem;
   }
+}
 
-  .muted-text {
-    @apply text-zinc-500;
-  }
+.gradient-text {
+  background: linear-gradient(to right, #ffffff, #e20074);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .gradient-text {
-    background: linear-gradient(
-      to right,
-      #ffffff,
-      #e20074
-    );
+.story-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: all 300ms ease;
+}
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.story-card:hover {
+  border-color: rgba(226, 0, 116, 0.5);
+  box-shadow: 0 0 20px rgba(226, 0, 116, 0.35);
+}
 
-  .story-card {
-    @apply glass-panel p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-glow;
-  }
+.nav-link {
+  color: #a1a1aa;
+  transition: color 200ms ease;
+}
 
-  .nav-link {
-    @apply text-zinc-400 hover:text-white transition-colors duration-200;
-  }
+.nav-link:hover {
+  color: #ffffff;
+}
 
-  .primary-button {
-    @apply bg-primary hover:opacity-90 text-white px-6 py-3 rounded-2xl transition-all duration-300 shadow-glow;
-  }
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  background: #e20074;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  transition: opacity 300ms ease;
+  box-shadow: 0 0 20px rgba(226, 0, 116, 0.35);
+}
 
-  .secondary-button {
-    @apply border border-white/10 hover:border-primary/50 text-white px-6 py-3 rounded-2xl transition-all duration-300;
-  }
+.primary-button:hover {
+  opacity: 0.9;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  transition: border-color 300ms ease;
+}
+
+.secondary-button:hover {
+  border-color: rgba(226, 0, 116, 0.5);
 }
