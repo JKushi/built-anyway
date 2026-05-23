@@ -5,7 +5,7 @@ import { BarChart3, BookOpen, Rocket } from "lucide-react";
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden pt-28">
-      <section className="section-container min-h-[90vh] grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center py-20">
+      <section className="section-container min-h-[78vh] grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center py-20">
         <div className="relative z-10">
           <p className="uppercase tracking-[0.3em] text-sm text-[#E20074] mb-6">
             Built Anyway
@@ -46,7 +46,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-container py-16">
+      <section className="section-container py-12">
         <div className="quote-panel">
           <div className="quote-mark">“</div>
           <p className="relative z-10 text-2xl md:text-4xl leading-relaxed font-light text-zinc-100 max-w-4xl">
@@ -55,7 +55,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-container py-24">
+      <section className="section-container py-16">
         <div className="grid lg:grid-cols-[0.35fr_0.65fr] gap-10 items-start">
           <div>
             <p className="text-[#E20074] uppercase tracking-[0.25em] text-sm mb-4">
@@ -110,7 +110,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-container py-24">
+      <section className="section-container py-16">
         <div className="glass-panel p-10">
           <p className="text-[#E20074] uppercase tracking-[0.25em] text-sm mb-4">
             Currently Building
