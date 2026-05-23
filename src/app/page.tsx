@@ -32,8 +32,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="hero-visual">
-<div className="hero-image-fade">
+<div className="hero-art">
   <Image
     src="/images/hero-workspace.png"
     alt="Moody workspace overlooking a city skyline with laptop, notebook, and Built Anyway coffee mug"
@@ -41,7 +40,6 @@ export default function HomePage() {
     priority
     className="object-cover"
   />
-</div>
 </div>
       </section>
 
