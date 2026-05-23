@@ -1,192 +1,176 @@
 import Link from "next/link";
+import { BarChart3, BookOpen, Coffee, Laptop, Rocket } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="relative overflow-hidden">
-      {/* HERO */}
-      <section className="section-container min-h-screen flex flex-col justify-center py-24">
-        <div className="max-w-5xl">
-          <p className="uppercase tracking-[0.3em] text-sm text-primary mb-6">
+    <div className="relative overflow-hidden pt-28">
+      <section className="section-container min-h-[90vh] grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center py-20">
+        <div>
+          <p className="uppercase tracking-[0.3em] text-sm text-[#E20074] mb-6">
             Built Anyway
           </p>
 
           <h1 className="headline mb-8">
             Builder. Analyst. Survivor.
-            <span className="gradient-text block">
-              Still Becoming.
-            </span>
+            <span className="block text-[#E20074]">Still Becoming.</span>
           </h1>
 
-          <p className="subheadline max-w-3xl mb-10">
+          <p className="subheadline max-w-xl mb-10">
             A living digital memoir, innovation lab, and systems-thinking
             platform documenting growth, survival, analytics, creativity,
             rebuilding, leadership, and the unfinished process of becoming.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Link
-              href="/story"
-              className="primary-button"
-            >
+            <Link href="/story" className="primary-button">
               Read My Story
             </Link>
 
-            <Link
-              href="/projects"
-              className="secondary-button"
-            >
+            <Link href="/projects" className="secondary-button">
               Explore Projects
             </Link>
           </div>
         </div>
 
-        <div className="mt-24 glass-panel p-8 max-w-4xl">
-          <p className="text-2xl md:text-3xl leading-relaxed font-light text-zinc-200">
-            “I was already doing the work before anyone gave me the title.”
+        <div className="hero-visual">
+          <div className="hero-card">
+            <div className="hero-skyline" />
+
+            <div className="absolute inset-x-8 bottom-8 glass-panel p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <Laptop className="text-[#E20074]" />
+                <Coffee className="text-[#E20074]" />
+              </div>
+
+              <h2 className="text-3xl font-bold">
+                Built<span className="text-[#E20074]">Anyway</span>
+              </h2>
+
+              <p className="text-zinc-400 mt-2">
+                A documentary dashboard of becoming.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container py-16">
+        <div className="quote-panel">
+          <div className="quote-mark">“</div>
+          <p className="text-2xl md:text-4xl leading-relaxed font-light text-zinc-100 max-w-4xl">
+            I was already doing the work before anyone gave me the title.
           </p>
         </div>
       </section>
 
-      {/* FEATURED SECTIONS */}
       <section className="section-container py-24">
-        <div className="mb-16">
-          <p className="text-primary uppercase tracking-[0.25em] text-sm mb-4">
-            Foundation
-          </p>
-
-          <h2 className="section-title">
-            Built from chaos.
-            <span className="gradient-text"> Refined through survival.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="story-card">
-            <h3 className="text-2xl font-semibold mb-4">
-              My Story
-            </h3>
-
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              From forensic accounting dreams to bulletproof-glass phone stores,
-              operational leadership, rebuilding life in Ohio, analytics,
-              layoffs, and still creating anyway.
+        <div className="grid lg:grid-cols-[0.35fr_0.65fr] gap-10 items-start">
+          <div>
+            <p className="text-[#E20074] uppercase tracking-[0.25em] text-sm mb-4">
+              Foundation
             </p>
 
-            <Link
-              href="/story"
-              className="nav-link"
-            >
-              Enter the timeline →
-            </Link>
+            <h2 className="section-title max-w-sm">
+              Built from chaos.{" "}
+              <span className="text-[#E20074]">Refined</span> through survival.
+            </h2>
           </div>
 
-          <div className="story-card">
-            <h3 className="text-2xl font-semibold mb-4">
-              What I Build
-            </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="story-card">
+              <BookOpen className="text-[#E20074] mb-5" size={34} />
+              <h3 className="text-2xl font-semibold mb-4">My Story</h3>
+              <p className="text-zinc-400 leading-relaxed mb-6">
+                From forensic accounting dreams to rebuilding, analytics,
+                layoffs, and still creating anyway.
+              </p>
+              <Link href="/story" className="text-[#E20074]">
+                Enter the timeline →
+              </Link>
+            </div>
 
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              Human-centered systems, dashboards, mobile apps, games,
-              operational tools, and ideas focused on clarity, connection,
-              growth, and empowerment.
-            </p>
+            <div className="story-card">
+              <Rocket className="text-[#E20074] mb-5" size={34} />
+              <h3 className="text-2xl font-semibold mb-4">What I Build</h3>
+              <p className="text-zinc-400 leading-relaxed mb-6">
+                Human-centered systems, dashboards, mobile apps, games, tools,
+                and ideas built for clarity.
+              </p>
+              <Link href="/projects" className="text-[#E20074]">
+                Explore projects →
+              </Link>
+            </div>
 
-            <Link
-              href="/projects"
-              className="nav-link"
-            >
-              Explore projects →
-            </Link>
-          </div>
-
-          <div className="story-card">
-            <h3 className="text-2xl font-semibold mb-4">
-              Dashboard of Becoming
-            </h3>
-
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              A future-facing analytical space exploring growth, burnout,
-              finances, creativity, career projections, and the reality behind
-              the metrics.
-            </p>
-
-            <Link
-              href="/dashboard"
-              className="nav-link"
-            >
-              View concepts →
-            </Link>
+            <div className="story-card">
+              <BarChart3 className="text-[#E20074] mb-5" size={34} />
+              <h3 className="text-2xl font-semibold mb-4">
+                Dashboard of Becoming
+              </h3>
+              <p className="text-zinc-400 leading-relaxed mb-6">
+                A future-facing space exploring growth, burnout, finances,
+                creativity, and career paths.
+              </p>
+              <Link href="/dashboard" className="text-[#E20074]">
+                View concepts →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CURRENT BUILD */}
       <section className="section-container py-24">
         <div className="glass-panel p-10">
-          <p className="text-primary uppercase tracking-[0.25em] text-sm mb-4">
+          <p className="text-[#E20074] uppercase tracking-[0.25em] text-sm mb-4">
             Currently Building
           </p>
 
-          <h2 className="section-title mb-8">
+          <h2 className="section-title mb-10">
             The next chapter is under construction.
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                AlphaSweep
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed">
-                A logic-driven mobile word and puzzle game built around pattern
-                recognition, challenge, and strategic thinking.
-              </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="project-strip">
+              <Rocket className="text-[#E20074]" size={36} />
+              <div>
+                <h3 className="text-xl font-semibold mb-2">AlphaSweep</h3>
+                <p className="text-zinc-400 leading-relaxed">
+                  A logic-driven mobile word and puzzle game built around
+                  pattern recognition and strategic thinking.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Property Management + Motivation App
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed">
-                A structured property management system designed for my husband,
-                combining organization, analytics, emotional reinforcement, and
-                grounding through family connection.
-              </p>
+            <div className="project-strip">
+              <BarChart3 className="text-[#E20074]" size={36} />
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  Personalized Property Management App
+                </h3>
+                <p className="text-zinc-400 leading-relaxed">
+                  A structured system combining organization, analytics,
+                  emotional reinforcement, and grounding through family
+                  connection.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="section-container py-16 border-t border-white/10">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-semibold mb-2">
-              Built Anyway
-            </h3>
+      <footer className="section-container py-10 border-t border-white/10">
+        <div className="grid md:grid-cols-3 gap-6 items-center">
+          <h3 className="text-xl font-bold">
+            Built<span className="text-[#E20074]">Anyway</span>
+          </h3>
 
-            <p className="text-zinc-500 max-w-xl">
-              A documentary dashboard of becoming.
-            </p>
-          </div>
+          <p className="text-zinc-500 text-center">
+            A documentary dashboard of becoming.
+          </p>
 
-          <div className="flex gap-6">
-            <Link href="/story" className="nav-link">
-              Story
-            </Link>
-
-            <Link href="/projects" className="nav-link">
-              Projects
-            </Link>
-
-            <Link href="/beliefs" className="nav-link">
-              Beliefs
-            </Link>
-
-            <Link href="/dashboard" className="nav-link">
-              Dashboard
-            </Link>
+          <div className="flex md:justify-end gap-6">
+            <Link href="/story" className="nav-link">Story</Link>
+            <Link href="/projects" className="nav-link">Projects</Link>
+            <Link href="/beliefs" className="nav-link">Beliefs</Link>
           </div>
         </div>
       </footer>
