@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-
+import Navbar from "@/components/navigation/Navbar";
 export const metadata: Metadata = {
   title: "Built Anyway",
   description:
@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
