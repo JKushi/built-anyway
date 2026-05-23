@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { BarChart3, BookOpen, Coffee, Laptop, Rocket } from "lucide-react";
 import Image from "next/image";
+import { BarChart3, BookOpen, Rocket } from "lucide-react";
+
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden pt-28">
       <section className="section-container min-h-[90vh] grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center py-20">
-        <div>
+        <div className="relative z-10">
           <p className="uppercase tracking-[0.3em] text-sm text-[#E20074] mb-6">
             Built Anyway
           </p>
@@ -32,21 +33,23 @@ export default function HomePage() {
           </div>
         </div>
 
-<div className="hero-art">
-  <Image
-    src="/images/hero-workspace.png"
-    alt="Moody workspace overlooking a city skyline with laptop, notebook, and Built Anyway coffee mug"
-    fill
-    priority
-    className="object-cover"
-  />
-</div>
+        <div className="hero-visual">
+          <div className="hero-art">
+            <Image
+              src="/images/hero-workspace.png"
+              alt="Moody workspace overlooking a city skyline with laptop, notebook, and Built Anyway coffee mug"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="section-container py-16">
         <div className="quote-panel">
           <div className="quote-mark">“</div>
-          <p className="text-2xl md:text-4xl leading-relaxed font-light text-zinc-100 max-w-4xl">
+          <p className="relative z-10 text-2xl md:text-4xl leading-relaxed font-light text-zinc-100 max-w-4xl">
             I was already doing the work before anyone gave me the title.
           </p>
         </div>
@@ -66,30 +69,31 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-<div className="story-card flex flex-col h-full">              <BookOpen className="text-[#E20074] mb-5" size={34} />
+            <div className="story-card flex flex-col h-full">
+              <BookOpen className="text-[#E20074] mb-5" size={34} />
               <h3 className="text-2xl font-semibold mb-4">My Story</h3>
               <p className="text-zinc-400 leading-relaxed mb-6">
                 From forensic accounting dreams to rebuilding, analytics,
                 layoffs, and still creating anyway.
               </p>
-              <Link href="/story" className="text-[#E20074]  mt-auto pt-6">
+              <Link href="/story" className="text-[#E20074] mt-auto pt-6">
                 Enter the timeline →
               </Link>
             </div>
 
-            <div className="story-card">
+            <div className="story-card flex flex-col h-full">
               <Rocket className="text-[#E20074] mb-5" size={34} />
               <h3 className="text-2xl font-semibold mb-4">What I Build</h3>
               <p className="text-zinc-400 leading-relaxed mb-6">
                 Human-centered systems, dashboards, mobile apps, games, tools,
                 and ideas built for clarity.
               </p>
-              <Link href="/projects" className="text-[#E20074]  mt-auto pt-6">
+              <Link href="/projects" className="text-[#E20074] mt-auto pt-6">
                 Explore projects →
               </Link>
             </div>
 
-            <div className="story-card">
+            <div className="story-card flex flex-col h-full">
               <BarChart3 className="text-[#E20074] mb-5" size={34} />
               <h3 className="text-2xl font-semibold mb-4">
                 Dashboard of Becoming
@@ -98,7 +102,7 @@ export default function HomePage() {
                 A future-facing space exploring growth, burnout, finances,
                 creativity, and career paths.
               </p>
-              <Link href="/dashboard" className="text-[#E20074]  mt-auto pt-6">
+              <Link href="/dashboard" className="text-[#E20074] mt-auto pt-6">
                 View concepts →
               </Link>
             </div>
@@ -156,9 +160,15 @@ export default function HomePage() {
           </p>
 
           <div className="flex md:justify-end gap-6">
-            <Link href="/story" className="nav-link">Story</Link>
-            <Link href="/projects" className="nav-link">Projects</Link>
-            <Link href="/beliefs" className="nav-link">Beliefs</Link>
+            <Link href="/story" className="nav-link">
+              Story
+            </Link>
+            <Link href="/projects" className="nav-link">
+              Projects
+            </Link>
+            <Link href="/beliefs" className="nav-link">
+              Beliefs
+            </Link>
           </div>
         </div>
       </footer>
