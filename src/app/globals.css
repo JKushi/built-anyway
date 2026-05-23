@@ -146,58 +146,6 @@ body::before {
 .secondary-button:hover {
   border-color: rgba(226, 0, 116, 0.5);
 }
-.hero-visual {
-  position: relative;
-  min-height: 520px;
-}
-
-.hero-image-wrap {
-  position: relative;
-  height: 520px;
-  border-radius: 2rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow:
-    0 0 50px rgba(226, 0, 116, 0.18),
-    inset 0 0 80px rgba(11, 11, 15, 0.85);
-  mask-image: radial-gradient(circle at center, black 58%, transparent 100%);
-}
-
-.hero-image-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(11, 11, 15, 0.15), transparent 45%),
-    linear-gradient(to top, rgba(11, 11, 15, 0.35), transparent 55%);
-  pointer-events: none;
-}
-
-.hero-card {
-  position: relative;
-  height: 520px;
-  border-radius: 2rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background:
-    linear-gradient(to bottom, rgba(226, 0, 116, 0.18), rgba(11, 11, 15, 0.95)),
-    radial-gradient(circle at 30% 20%, rgba(226, 0, 116, 0.35), transparent 35%),
-    #12121a;
-  box-shadow: 0 0 50px rgba(226, 0, 116, 0.18);
-}
-
-.hero-skyline {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to top, #0b0b0f 5%, transparent 45%),
-    repeating-linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.07) 0 2px,
-      transparent 2px 80px
-    );
-  opacity: 0.85;
-}
 
 .quote-panel {
   position: relative;
@@ -227,27 +175,28 @@ body::before {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.fixed-hero-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background-image:
-    linear-gradient(to bottom, rgba(11, 11, 15, 0.45), #0b0b0f 78%),
-    linear-gradient(to right, rgba(11, 11, 15, 0.9), rgba(11, 11, 15, 0.35), rgba(11, 11, 15, 0.95)),
-    url("/images/hero-workspace.png");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  opacity: 0.32;
-  filter: blur(1px) saturate(0.85);
-  pointer-events: none;
+.hero-visual {
+  position: sticky;
+  top: 7rem;
+  height: 560px;
 }
 
-.fixed-hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 70% 20%, rgba(226, 0, 116, 0.16), transparent 35%),
-    radial-gradient(circle at 20% 90%, rgba(226, 0, 116, 0.08), transparent 30%);
+.hero-image-fade {
+  position: relative;
+  height: 560px;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.92;
+  filter: saturate(0.95) contrast(1.05);
+  pointer-events: none;
+
+  -webkit-mask-image:
+    linear-gradient(to bottom, black 0%, black 58%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 18%, black 100%);
+  mask-image:
+    linear-gradient(to bottom, black 0%, black 58%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 18%, black 100%);
+
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }

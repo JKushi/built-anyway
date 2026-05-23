@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden pt-28">
-      <div className="fixed-hero-bg" />
       <section className="section-container min-h-[90vh] grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center py-20">
         <div>
           <p className="uppercase tracking-[0.3em] text-sm text-[#E20074] mb-6">
@@ -34,15 +33,15 @@ export default function HomePage() {
         </div>
 
         <div className="hero-visual">
-  <div className="hero-image-wrap">
-    <Image
-      src="/images/hero-workspace.png"
-      alt="Moody workspace overlooking a city skyline with laptop, notebook, and Built Anyway coffee mug"
-      fill
-      priority
-      className="object-cover"
-    />
-  </div>
+<div className="hero-image-fade">
+  <Image
+    src="/images/hero-workspace.png"
+    alt="Moody workspace overlooking a city skyline with laptop, notebook, and Built Anyway coffee mug"
+    fill
+    priority
+    className="object-cover"
+  />
+</div>
 </div>
       </section>
 
