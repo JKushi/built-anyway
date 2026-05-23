@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BarChart3, BookOpen, Coffee, Laptop, Rocket } from "lucide-react";
-
+import Image from "next/image";
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden pt-28">
@@ -33,25 +33,16 @@ export default function HomePage() {
         </div>
 
         <div className="hero-visual">
-          <div className="hero-card">
-            <div className="hero-skyline" />
-
-            <div className="absolute inset-x-8 bottom-8 glass-panel p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <Laptop className="text-[#E20074]" />
-                <Coffee className="text-[#E20074]" />
-              </div>
-
-              <h2 className="text-3xl font-bold">
-                Built<span className="text-[#E20074]">Anyway</span>
-              </h2>
-
-              <p className="text-zinc-400 mt-2">
-                A documentary dashboard of becoming.
-              </p>
-            </div>
-          </div>
-        </div>
+  <div className="hero-image-wrap">
+    <Image
+      src="/images/hero-workspace.png"
+      alt="Moody workspace overlooking a city skyline with laptop, notebook, and Built Anyway coffee mug"
+      fill
+      priority
+      className="object-cover"
+    />
+  </div>
+</div>
       </section>
 
       <section className="section-container py-16">

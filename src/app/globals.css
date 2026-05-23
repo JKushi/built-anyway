@@ -151,6 +151,25 @@ body::before {
   min-height: 520px;
 }
 
+.hero-image-wrap {
+  position: relative;
+  height: 520px;
+  border-radius: 2rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 50px rgba(226, 0, 116, 0.18);
+}
+
+.hero-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(11, 11, 15, 0.15), transparent 45%),
+    linear-gradient(to top, rgba(11, 11, 15, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
 .hero-card {
   position: relative;
   height: 520px;
