@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden pt-28">
+      <div className="fixed-hero-bg" />
       <section className="section-container min-h-[90vh] grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center py-20">
         <div>
           <p className="uppercase tracking-[0.3em] text-sm text-[#E20074] mb-6">
@@ -68,14 +69,13 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="story-card">
-              <BookOpen className="text-[#E20074] mb-5" size={34} />
+<div className="story-card flex flex-col h-full">              <BookOpen className="text-[#E20074] mb-5" size={34} />
               <h3 className="text-2xl font-semibold mb-4">My Story</h3>
               <p className="text-zinc-400 leading-relaxed mb-6">
                 From forensic accounting dreams to rebuilding, analytics,
                 layoffs, and still creating anyway.
               </p>
-              <Link href="/story" className="text-[#E20074]">
+              <Link href="/story" className="text-[#E20074]  mt-auto pt-6">
                 Enter the timeline →
               </Link>
             </div>
@@ -87,7 +87,7 @@ export default function HomePage() {
                 Human-centered systems, dashboards, mobile apps, games, tools,
                 and ideas built for clarity.
               </p>
-              <Link href="/projects" className="text-[#E20074]">
+              <Link href="/projects" className="text-[#E20074]  mt-auto pt-6">
                 Explore projects →
               </Link>
             </div>
@@ -101,7 +101,7 @@ export default function HomePage() {
                 A future-facing space exploring growth, burnout, finances,
                 creativity, and career paths.
               </p>
-              <Link href="/dashboard" className="text-[#E20074]">
+              <Link href="/dashboard" className="text-[#E20074]  mt-auto pt-6">
                 View concepts →
               </Link>
             </div>
