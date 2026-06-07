@@ -3,18 +3,21 @@ import { ArrowLeft } from "lucide-react";
 import { storyChapters } from "@/data/story/chapters";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function StoryChapterPage({ params }: Props) {
-  const chapter = storyChapters.find((item) => item.slug === params.slug);
+export default async function StoryChapterPage({ params }: Props) {
+  const { slug } = await params;
+
+  const chapter = storyChapters.find((item) => item.slug === slug);
 
   if (!chapter) {
     return (
       <div className="pt-36 section-container">
         <h1 className="headline">Chapter not found</h1>
+        <p className="text-zinc-400 mt-4">Slug received: {slug}</p>
       </div>
     );
   }
@@ -22,7 +25,10 @@ export default function StoryChapterPage({ params }: Props) {
   return (
     <div className="pt-36 pb-24">
       <section className="section-container">
-        <Link href="/story" className="inline-flex items-center gap-2 text-[#E20074] mb-12">
+        <Link
+          href="/story"
+          className="inline-flex items-center gap-2 text-[#E20074] mb-12"
+        >
           <ArrowLeft size={18} />
           Back to story
         </Link>
@@ -45,11 +51,18 @@ export default function StoryChapterPage({ params }: Props) {
 
           <div className="glass-panel p-8 md:p-10">
             <p className="text-zinc-400 leading-relaxed text-lg">
-              This chapter is drafted in the story architecture and ready for writing.
+              This chapter is drafted in the story architecture and ready for
+              writing.
             </p>
           </div>
         </article>
       </section>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  return storyChapters.map((chapter) => ({
+    slug: chapter.slug
+  }));
 }
