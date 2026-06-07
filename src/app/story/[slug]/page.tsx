@@ -49,11 +49,12 @@ export default async function StoryChapterPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="glass-panel p-8 md:p-10">
-            <p className="text-zinc-400 leading-relaxed text-lg">
-              This chapter is drafted in the story architecture and ready for
-              writing.
-            </p>
+          <div className="glass-panel p-8 md:p-10 space-y-6">
+            {chapter.body?.map((paragraph, index) => (
+              <p key={index} className="text-zinc-300 leading-relaxed text-lg">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </article>
       </section>
